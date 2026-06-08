@@ -223,7 +223,12 @@ Datasets/
 Datasets
 wandb/
 results/
+
+# Weight files (except released pretrained models)
 *.pth
 *.pt
 *.ckpt
+!pretrained/
+!pretrained/**
+
 RARR/

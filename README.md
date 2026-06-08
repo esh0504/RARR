@@ -36,6 +36,21 @@ python train.py --config Configs/train.yml
 
 Checkpoints are saved to `checkpoints/<EXP_NAME>/Deraining/models/RARR/`.
 
+## Pretrained Models
+
+Pretrained weights are included in `pretrained/`:
+
+| File | Dataset |
+|------|---------|
+| `RAIN200L_model_best.pth` | Rain200L |
+| `RAIN200H_model_best.pth` | Rain200H |
+
+To test with a pretrained model, set `ROOT.DIR`, `EXP_NAME`, and `ROOT.WEIGHT` in `Configs/test.yml`, or load the checkpoint directly:
+
+```python
+utils.load_checkpoint(model, 'pretrained/RAIN200L_model_best.pth')
+```
+
 ## Testing
 
 ```bash
