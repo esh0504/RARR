@@ -1,0 +1,15 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class Loss(nn.Module):
+    """Charbonnier Loss (L1)"""
+
+    def __init__(self, eps=1e-3):
+        super(Loss, self).__init__()
+        self.eps = eps
+
+    def forward(self, x, y):
+        diff = x - y
+        loss = torch.mean(torch.sqrt((diff * diff) + (self.eps*self.eps)))
+        return loss

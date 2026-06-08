@@ -1,0 +1,39 @@
+###############
+
+
+EXP_NAME: 'EXP_NAME'
+CUDA_DEVICE_ORDER: 'PCI_BUS_ID'
+GPU: [0]
+SEED: 1234
+VERBOSE: True
+
+WANDB:
+  USER: 'your_username'
+  USE: False
+  APIKEY: 'your_wandb_api_key'
+
+MODEL:
+  MODE: 'Deraining'
+  SESSION: 'RARR'
+# Optimization arguments.
+
+ROOT: 
+  DIR: 'checkpoints/Rain200L'
+  WEIGHT: 'model_best.pth'
+
+DATASET:
+  TEST: [
+    {
+      # Rain200L: 'Datasets/Rain200L/test',
+      Rain200H: 'Datasets/Rain200H/test',
+      Rain13K: 'Datasets/Rain13K',
+      Test100: 'Datasets/Test100',
+      Test1200: 'Datasets/Test1200',
+      Rain1400: 'Datasets/Rain1400/Rain1400/',
+      DID-MDN-test : 'Datasets/DID-MDN-datasets/DID-MDN-test',
+      RainDS_syn : 'Datasets/RainDS_syn/test',
+      RainDS_real : 'Datasets/RainDS_real/test',
+      # internet: "Datasets/internet/"
+    }
+  ]
+  

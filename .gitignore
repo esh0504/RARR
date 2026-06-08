@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project artifacts (do not commit)
+checkpoints/
+Datasets/
+Datasets
+wandb/
+results/
+*.pth
+*.pt
+*.ckpt
+RARR/

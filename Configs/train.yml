@@ -1,0 +1,46 @@
+###############
+
+
+EXP_NAME: 'EXP_NAME'
+CUDA_DEVICE_ORDER: 'PCI_BUS_ID'
+GPU: [0]
+SEED: 1234
+VERBOSE: True
+
+WANDB:
+  USER: 'your_username'
+  USE: False
+  APIKEY: 'your_wandb_api_key'
+  
+MODEL:
+  MODE: 'Deraining'
+  SESSION: 'RARR'
+# Optimization arguments.
+OPTIM:
+  BATCH_SIZE: 1
+  NUM_EPOCHS: 300
+  # NEPOCH_DECAY: [10]
+  LR_INITIAL: 2e-4
+  LR_MIN: 1e-6
+  # BETA1: 0.9
+DATASET:
+  TRAIN:
+    RESUME: False
+    PS: 256
+    DATADIR: 'Datasets/Rain200L/train/'
+  
+  VALIDATE:
+    VAL_AFTER_EVERY: 5
+    PS: 256
+    DATADIR: 'Datasets/Rain200L/test/' # path to validation data
+SAVE:
+  DIR: 'checkpoints/Rain200L'
+  
+LOSS: [
+    {
+      'CharbonnierLoss': 1.0, 
+      # 'EdgeLoss': 0.05
+      'GDLoss': 0.25
+      # 'SSIMLoss': 1
+    }
+  ]
